@@ -1,6 +1,10 @@
-# OS Install
+# Setup
 
-## Linux
+## Raspbian
+
+### Prepare MicroSD card
+
+#### Linux
 
 1. Open a partition manager
     1. KDE Partition Manager
@@ -14,6 +18,9 @@
     1. Torrent file works faster
 1. Extract the content into a folder
 1. Copy all the files onto MicroSD card
+
+### Install Raspbian
+
 1. Insert the card into Raspberry Pi
 1. Turn on the Raspberry Pi
 1. A rainbow-colored boot screen will appear
@@ -21,6 +28,8 @@
 1. Install Raspbian with all the software
     1. The first option
 1. When done, click the button to restart
+
+### Configure Raspbian
 1. At first boot use the configuration window to setup basic things
 1. __*Important__ Set the password when prompted, is just easier
 1. __*Important__ Do the updates
