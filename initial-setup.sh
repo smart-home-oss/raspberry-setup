@@ -19,8 +19,10 @@ cd ~ || exit 1
 source .bash_aliases
 cd - || exit 1
 
-mkdir ~/IdeaProjects
+wget https://project-downloads.drogon.net/wiringpi-latest.deb
+sudo dpkg -i wiringpi-latest.deb
 
+mkdir ~/IdeaProjects
 git clone https://github.com/smart-home-oss/raspberry-setup.git ~/IdeaProjects/raspberry-setup
 
 echo "Done, please exit this shell session and open a new one for the changes to become effective."
