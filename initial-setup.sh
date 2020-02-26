@@ -22,3 +22,5 @@ cd - || exit 1
 mkdir ~/IdeaProjects
 
 git clone https://github.com/smart-home-oss/raspberry-setup.git ~/IdeaProjects/raspberry-setup
+
+echo "Done, please exit this shell session and open a new one for the changes to become effective."
