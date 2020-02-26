@@ -11,3 +11,6 @@ echo "alias l='ls -CF'" >> ~/.bash_aliases;
 
 source .bash_aliases
 
+mkdir ~/IdeaProjects
+
+git clone https://github.com/smart-home-oss/raspberry-setup.git ~IdeaProjects/raspberry-setup
