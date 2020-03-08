@@ -15,6 +15,8 @@ echo "alias ll='ls -alF'" >> ~/.bash_aliases;
 echo "alias la='ls -A'" >> ~/.bash_aliases;
 echo "alias l='ls -CF'" >> ~/.bash_aliases;
 echo "alias shut='sudo shutdown 0'" >> ~/.bash_aliases;
+echo "alias py='python'" >> ~/.bash_aliases;
+echo "alias py3='python3'" >> ~/.bash_aliases;
 
 cd ~ || exit 1
 source .bash_aliases
