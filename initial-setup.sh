@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+git pull;
+
 # curl -L "https://raw.githubusercontent.com/smart-home-oss/raspberry-setup/master/initial-setup.sh" | bash -
 
 if [ ! -f "$HOME/.bash_aliases" ]; then
