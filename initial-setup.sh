@@ -4,8 +4,11 @@
 
 mkdir ~/shoss
 git clone https://github.com/smart-home-oss/raspberry-setup.git ~/shoss/raspberry-setup
+cd ~/shoss/raspberry-setup || exit 1
+git pull
+cd - || exit 1
 
-git pull;
+# https://www.raspberrypi.org/documentation/linux/usage/bashrc.md
 ALIAS_FILE=~/.bash_aliases_shoss
 
 addAlias() {
@@ -18,7 +21,6 @@ touch $ALIAS_FILE
 # https://www.raspberrypi.org/forums/viewtopic.php?t=34994
 addAlias "alias temp='/opt/vc/bin/vcgencmd measure_temp'"
 addAlias "alias tempf='watch \"/opt/vc/bin/vcgencmd measure_temp\"'"
-
 
 addAlias "alias ll='ls -alF'"
 addAlias "alias la='ls -A'"
@@ -34,7 +36,13 @@ cd - || exit 1
 # WiringPi is a PIN based GPIO access library written in C
 # for the BCM2835, BCM2836 and BCM2837 SoC devices
 # used in all Raspberry Pi
+rm wiringpi-latest.deb
 wget https://project-downloads.drogon.net/wiringpi-latest.deb
 sudo dpkg -i wiringpi-latest.deb
+
+# https://github.com/pybluez/pybluez
+sudo apt-get update
+sudo apt-get install bluetooth bluez libbluetooth-dev
+sudo python3 -m pip install pybluez
 
 echo "Done, please exit this shell session and open a new one for the changes to become effective."
