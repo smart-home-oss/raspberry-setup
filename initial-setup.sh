@@ -43,7 +43,7 @@ sudo dpkg -i wiringpi-latest.deb
 
 # https://github.com/pybluez/pybluez
 sudo apt-get update
-sudo apt-get install bluetooth bluez libbluetooth-dev -y
+sudo apt-get -y install bluetooth bluez libbluetooth-dev
 sudo python3 -m pip install pybluez
 
 echo "Done. Now you'll have a bunch of aliases as shortcuts for popular commands."
