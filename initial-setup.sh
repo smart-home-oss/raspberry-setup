@@ -36,7 +36,6 @@ echo "source .bash_aliases_shoss" >> .bashrc
 source .bashrc
 cd - || exit 1
 
-
 # WiringPi is a PIN based GPIO access library written in C
 # for the BCM2835, BCM2836 and BCM2837 SoC devices
 # used in all Raspberry Pi
@@ -50,4 +49,8 @@ sudo apt-get -y install bluetooth bluez libbluetooth-dev
 sudo python3 -m pip install pybluez
 
 echo "Done. Now you'll have a bunch of aliases as shortcuts for popular commands."
-echo "Type to test: shoss."
+echo "The help is covered by the alias: shoss."
+echo "----------------------------------------"
+echo "You can re-login to have them."
+echo "OR"
+echo "Type to activate: cd && source .bashrc"
