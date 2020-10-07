@@ -31,8 +31,11 @@ addAlias "alias py3='python3'"
 addAlias "alias shoss='cat ~/.bash_aliases_shoss'"
 
 cd ~ || exit 1
-source .bash_aliases_shoss
+sed -i '/source .bash_aliases_shoss/d' .bashrc
+echo "source .bash_aliases_shoss" >> .bashrc
+source .bashrc
 cd - || exit 1
+
 
 # WiringPi is a PIN based GPIO access library written in C
 # for the BCM2835, BCM2836 and BCM2837 SoC devices
