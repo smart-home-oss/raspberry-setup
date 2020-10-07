@@ -28,6 +28,7 @@ addAlias "alias l='ls -CF'"
 addAlias "alias shut='sudo shutdown 0'"
 addAlias "alias py='python'"
 addAlias "alias py3='python3'"
+addAlias "alias shoss='cat ~/.bash_aliases_shoss'"
 
 cd ~ || exit 1
 source .bash_aliases_shoss
@@ -45,4 +46,5 @@ sudo apt-get update
 sudo apt-get install bluetooth bluez libbluetooth-dev
 sudo python3 -m pip install pybluez
 
-echo "Done, please exit this shell session and open a new one for the changes to become effective."
+echo "Done. Now you'll have a bunch of aliases as shortcuts for popular commands."
+echo "Type to test: shoss."
