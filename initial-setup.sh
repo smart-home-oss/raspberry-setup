@@ -44,9 +44,19 @@ wget https://project-downloads.drogon.net/wiringpi-latest.deb
 sudo dpkg -i wiringpi-latest.deb
 
 # https://github.com/pybluez/pybluez
-sudo apt-get update
-sudo apt-get -y install bluetooth bluez libbluetooth-dev
+sudo apt update
+sudo apt -y install locate bluetooth bluez libbluetooth-dev
+sudo updatedb
+
 sudo python3 -m pip install pybluez
+sudo python3 -m pip install pexpect
+
+# http://donjajo.com/bluetooth-fix-a2dp-source-profile-connect-failed-xx-protocol-not-available-linux/
+# a2dp-source profile connect failed for XX Protocol not available in Linux
+sudo apt install pulseaudio-module-bluetooth
+sudo killall pulseaudio
+pulseaudio --start
+sudo systemctl restart bluetooth
 
 echo "Done. Now you'll have a bunch of aliases as shortcuts for popular commands."
 echo "The help is covered by the alias: shoss."
