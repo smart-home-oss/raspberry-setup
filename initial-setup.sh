@@ -12,7 +12,7 @@ cd - || exit 1
 ALIAS_FILE=~/.bash_aliases_shoss
 
 addAlias() {
-  echo "$1" >> $ALIAS_FILE
+  echo "$1" >>$ALIAS_FILE
 }
 
 rm $ALIAS_FILE
@@ -32,7 +32,7 @@ addAlias "alias shoss='cat ~/.bash_aliases_shoss'"
 
 cd ~ || exit 1
 sed -i '/source .bash_aliases_shoss/d' .bashrc
-echo "source .bash_aliases_shoss" >> .bashrc
+echo "source .bash_aliases_shoss" >>.bashrc
 source .bashrc
 cd - || exit 1
 
@@ -51,12 +51,20 @@ sudo updatedb
 sudo python3 -m pip install pybluez
 sudo python3 -m pip install pexpect
 
+# PULSEAUDIO FIX
+# this issue prevents the bluetooth from keeping the connection
+#
+# runing : systemctl status bluetooth
+# will show you something like :
+# Oct 08 22:17:55 raspberrypi bluetoothd[564]: a2dp-source profile connect failed for XX: Protocol not available in Linux
+#
 # http://donjajo.com/bluetooth-fix-a2dp-source-profile-connect-failed-xx-protocol-not-available-linux/
 # a2dp-source profile connect failed for XX Protocol not available in Linux
 sudo apt install pulseaudio-module-bluetooth
 sudo killall pulseaudio
 pulseaudio --start
 sudo systemctl restart bluetooth
+# END FIX
 
 echo "Done. Now you'll have a bunch of aliases as shortcuts for popular commands."
 echo "The help is covered by the alias: shoss."
